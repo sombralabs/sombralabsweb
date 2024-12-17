@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  cursor: none !important;
+}
+
+.custom-rounded-borders {
+  border-radius: 10px;
+  padding: 2px; /* Adjust padding if needed */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.custom-rounded-borders::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  border: 2px solid purple; /* Adjust color and width if needed */
+  z-index: -1;
+}
+
+.social-link-hover:hover img {
+  content: url("/icons/social.png");
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 1024px) {
+  .menu-wrapper {
+    mask-image: url("../public/images/menu-mask.png"), linear-gradient(#000 0 0);
+    mask-size: auto min(90vh, 65vw);
+    mask-position: 95% 50%;
+    mask-repeat: no-repeat, repeat;
+    mask-composite: exclude;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar,
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
